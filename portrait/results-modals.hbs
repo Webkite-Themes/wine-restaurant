@@ -1,0 +1,149 @@
+{{#each this.items~}}
+  <div id="{{this.id}}" class="webkite-item-details webkite-modal">
+    <div class="webkite-result-modal">
+      <a href="#" data-id="{{this.id}}" class="webkite-toggle-item" data-animate="200ms" data-speed="100ms">x</a>
+      <div class="webkite-modal-content">
+        <div class="webkite-result webkite-block-group{{#any (find ../facets name="Price Per Glass" empty=true) (find ../facets name="Price Per Bottle" empty=true)}} webkite-prices-single{{/any}}">
+        
+              <div class="webkite-block webkite-block-seventy">
+                {{#facet name="Image URL"}}<div class="webkite-image-wrapper"><img src="{{displayValue}}"/></div>{{/facet~}}
+                <div class="webkite-result-body">
+                  {{#any (find facets name="Vintage") (find facets name="Varietal")}}
+                    <div class="webkite-subheadline">
+                      {{~#facet name="Vintage"}}<span class="webkite-vintage">{{displayValue}}</span>{{/facet}}
+                      {{~#facet name="Varietal"~}}
+                        <span class="webkite-varietal">
+                          {{~#if filterable}}
+                            {{~#each values~}}
+                              <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>
+                              {{~#unless @last}}/{{/unless~}}
+                            {{~/each}}
+                          {{~else}}
+                            {{~#each values}}{{this}}{{#unless @last}}/{{/unless}}{{/each}}
+                          {{~/if~}}
+                        </span>
+                      {{~/facet~}}
+                    </div>
+                  {{/any}}
+                  {{#any (find facets name="Winery") (find facets name="Wine Name")}}
+                    <h2 class="webkite-headline">
+                      {{~#facet name="Winery"}}
+                        {{~#if filterable~}}
+                          {{~#each values~}}
+                            <a href="#" class="webkite-add-filter webkite-winery"  data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>
+                            {{~#unless @last}}/{{/unless~}}
+                          {{~/each}}
+                        {{~else~}}
+                          <span class="webkite-winery">{{displayValue}}</span>
+                        {{~/if}}
+                      {{~/facet}}
+                      {{#facet name="Wine Name"}}<span class="webkite-wine-name">{{displayValue}}</span>{{/facet~}}
+                    </h2>
+                  {{/any}}
+
+                  <div class="webkite-block-group webkite-prices until-md">
+                    {{~#unless (find ../../facets name="Price Per Glass" empty=true)~}}
+                      <div class="webkite-block webkite-block-fifty webkite-glass">
+                        <span class="webkite-price">
+                          <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
+                          {{#facet name="Price Per Glass"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
+                          {{#unless (find facets name="Price Per Glass")~}}-{{~/unless~}}
+                        </span>
+                      </div>
+                    {{~/unless~}}
+                    {{~#unless (find ../../facets name="Price Per Bottle" empty=true)~}}
+                      <div class="webkite-block webkite-block-fifty webkite-bottle">
+                        <span class="webkite-price">
+                          <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
+                          {{#facet name="Price Per Bottle"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet}}                
+                          {{#unless (find facets name="Price Per Bottle")~}}-{{~/unless}}
+                        </span>
+                      </div>
+                    {{~/unless~}}
+                  </div><!-- block-group -->
+ 
+                  
+                  {{#any (find facets name="Region") (find facets name="State") (find facets name="Country")}}
+                    <ul class="webkite-wine-block">
+                      {{#any (find facets name="Region") (find facets name="State") (find facets name="Country")}}
+                        <li class="webkite-providence">
+                          {{~#facet name="Region"~}}
+                            {{~#if filterable~}}
+                              {{~#each values~}}
+                                <a href="#" class="webkite-add-filter webkite-region"  data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>
+                                {{~#unless @last}}/{{/unless~}}
+                              {{~/each}}
+                            {{~else~}}
+                              <span class="webkite-region">{{~displayValue}}</span>
+                            {{~/if~}}          
+                          {{~/facet}}
+                
+                          {{~#facet name="State"}}
+                            {{~#if filterable~}}
+                              {{~#each values~}}
+                                <a href="#" class="webkite-add-filter webkite-state"  data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>
+                                {{~#unless @last}}/{{/unless~}}
+                              {{~/each}}
+                            {{~else~}}
+                              <span class="webkite-state">{{~displayValue}}</span>
+                            {{~/if~}}          
+                          {{~/facet}}
+                
+                          {{~#facet name="Country"}}
+                            {{~#if filterable~}}
+                              {{~#each values~}}
+                                <a href="#" class="webkite-add-filter webkite-country"  data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>
+                                {{~#unless @last}}/{{/unless~}}
+                              {{~/each}}
+                            {{~else~}}
+                              <span class="webkite-country">{{~displayValue}}</span>
+                            {{~/if~}}          
+                          {{~/facet~}}
+                        </li>
+                      {{/any}}
+                      
+                      <li class="webkite-address">2000 Bauer Rd Laytonville, CA 95454</li>
+                      <li class="webkite-website"><a href="#" target="_blank">{{t "website" default="website"}}</a></li>
+                    </ul>
+                  {{/any}}
+                  
+                  {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block">{{displayValue}}</p>{{~/facet}}
+
+                  {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block">Pairs with something</p>{{~/facet}}
+
+                  {{#facet name="Tasting Notes"~}}
+                    <ul class="webkite-wine-block webkite-wine-extra-detail">
+                      <li>Rating 92</li><li>1 Bottle on Hand</li><li>Bin 64</li>
+                    </ul>
+                  {{~/facet}}                                    
+                </div> <!-- webkite-result-body -->
+              </div><!--
+    
+           --><div class="webkite-block webkite-block-thirty webkite-prices-wrap md-only">
+                <div class="webkite-block-group webkite-prices">
+                  {{~#unless (find ../../facets name="Price Per Glass" empty=true)~}}
+                    <div class="webkite-block webkite-block-fifty webkite-glass">
+                      <span class="webkite-price">
+                        <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
+                        {{~#facet name="Price Per Glass"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                        {{~#unless (find facets name="Price Per Glass")~}}-{{~/unless~}}
+                      </span>
+                    </div>
+                  {{~/unless~}}
+                  {{~#unless (find ../../facets name="Price Per Bottle" empty=true)~}}
+                    <div class="webkite-block webkite-block-fifty webkite-bottle">
+                      <span class="webkite-price">
+                        <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
+                        {{~#facet name="Price Per Bottle"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                        {{~#unless (find facets name="Price Per Bottle")~}}-{{~/unless~}}
+                      </span>
+                    </div>
+                  {{~/unless~}}
+                </div><!-- block-group -->
+              </div>
+        
+        </div><!-- block-group -->
+      </div><!-- webkite-modal-content -->
+    </div><!-- webkite-result-modal -->
+  </div>
+{{/each}}
