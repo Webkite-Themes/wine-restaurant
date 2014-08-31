@@ -24,7 +24,7 @@ $imageWidthMd: 100px;
   padding: $mainGutter;
   font: 400 14px/normal 'Open Sans', 'Arial', sans-serif;
   a{color:$linkColor;
-      text-decoration: none; 
+    text-decoration: none; 
     &:hover{color: $linkHover;}
     }
   &.webkite-fade-out img{opacity: .5;}
