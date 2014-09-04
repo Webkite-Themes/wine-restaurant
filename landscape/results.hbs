@@ -72,7 +72,7 @@
                   </div><!-- block-group -->
  
                   
-                  {{#any (find facets name="Region") (find facets name="State") (find facets name="Country")}}
+                  {{#any (find facets name="Region") (find facets name="State") (find facets name="Country") (find facets name="Winery Address") (find facets name="Winery URL")}}
                     <ul class="webkite-wine-block">
                       {{#any (find facets name="Region") (find facets name="State") (find facets name="Country")}}
                         <li class="webkite-providence">
@@ -111,20 +111,34 @@
                         </li>
                       {{/any}}
                       
-                      <li class="webkite-address">2000 Bauer Rd Laytonville, CA 95454</li>
-                      <li class="webkite-website"><a href="#" target="_blank">{{t "website" default="website"}}</a></li>
+                      {{#facet name="Winery Address"}}
+                        <li class="webkite-address">{{displayValue}}</li>
+                      {{/facet}}
+                      {{#facet name="Winery URL"}}
+                        <li class="webkite-website"><a href="{{displayValue}}" target="_blank">{{t "website" default="website"}}</a></li>
+                      {{/facet}}
                     </ul>
                   {{/any}}
                   
                   {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block">{{displayValue}}</p>{{~/facet}}
 
-                  {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block">Pairs with something</p>{{~/facet}}
-
-                  {{#facet name="Tasting Notes"~}}
+                  {{#facet name="Pairs With"~}}
+                    <p class="webkite-wine-block">{{displayName}}: {{displayValue}}</p>
+                  {{~/facet}}
+                  
+                  {{#any (find facets name="Bottles On Hand") (find facets name="Bottle Location") (find facets name="Rating")}}
                     <ul class="webkite-wine-block webkite-wine-extra-detail">
-                      <li>Rating 92</li><li>1 Bottle on Hand</li><li>Bin 64</li>
+                      {{~#facet name="Rating"~}}
+                        <li>{{displayName}} {{displayValue}}</li>
+                      {{~/facet~}}
+                      {{~#facet name="Bottles On Hand"~}}
+                        <li>{{displayValue}} {{displayName}}</li>
+                      {{~/facet~}}
+                      {{~#facet name="Bottle Location"~}}
+                        <li>{{displayValue}}</li>
+                      {{~/facet~}}
                     </ul>
-                  {{~/facet}}                                    
+                  {{/any}}                                 
                 </div> <!-- webkite-result-body -->
               </div><!--
     
