@@ -73,17 +73,25 @@
                   </div><!-- block-group -->
                 {{/any}}
                 
-                {{#facet name="Tasting Notes"~}}<p class="webkite-wine-block webkite-wine-pairing">Pairs with something</p>{{~/facet}}
+                {{#facet name="Pairs With"~}}
+                  <p class="webkite-wine-block webkite-wine-pairing">{{displayName}}: {{displayValue}}</p>
+                {{~/facet}}
 
-                {{#facet name="Tasting Notes"~}}
+                {{#any (find facets name="Bottles On Hand") (find facets name="Bottle Location") (find facets name="Rating")}}
                   <ul class="webkite-wine-block webkite-wine-extra-detail">
-                    <li>Rating 92</li>
-                    <li>1 Bottle on Hand</li>
-                    <li>Bin 64</li>
+                    {{~#facet name="Rating"~}}
+                      <li>{{displayName}} {{displayValue}}</li>
+                    {{~/facet~}}
+                    {{~#facet name="Bottles On Hand"~}}
+                      <li>{{displayValue}} {{displayName}}</li>
+                    {{~/facet~}}
+                    {{~#facet name="Bottle Location"~}}
+                      <li>{{displayValue}}</li>
+                    {{~/facet~}}
                   </ul>
-                {{~/facet}}                                    
+                {{/any}}                                 
                 
-                {{#any (find facets name="Tasting Notes") (find facets name="Region") (find facets name="State") (find facets name="Country")}}
+                {{#any (find facets name="Tasting Notes") (find facets name="Region") (find facets name="State") (find facets name="Country") (find facets name="Winery Address") (find facets name="Winery URL")}}
                   <div class="webkite-wine-block webkite-result-foot">
                     <a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item" data-toggle="modal" data-speed="100ms">{{downcase (t "Details" default="details")}}</a>
                   </div>
