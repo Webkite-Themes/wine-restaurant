@@ -52,7 +52,7 @@
                 {{/any}}
                 {{#any (find facets name="Price Per Glass") (find facets name="Price Per Bottle")}}
                   <div class="webkite-block-group webkite-prices{{#any (find ../../facets name="Price Per Glass" empty=true) (find ../../facets name="Price Per Bottle" empty=true)}} webkite-prices-single{{/any}}">
-                    {{~#unless (find ../../facets name="Price Per Glass" empty=true)~}}
+                    {{~#unless (find ../facets name="Price Per Glass" empty=true)~}}
                       <div class="webkite-block webkite-block-fifty webkite-glass">
                         <span class="webkite-price">
                           <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
@@ -61,7 +61,7 @@
                         </span>
                       </div>
                     {{~/unless~}}
-                    {{~#unless (find ../../facets name="Price Per Bottle" empty=true)~}}
+                    {{~#unless (find ../facets name="Price Per Bottle" empty=true)~}}
                       <div class="webkite-block webkite-block-fifty webkite-bottle">
                         <span class="webkite-price">
                           <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>

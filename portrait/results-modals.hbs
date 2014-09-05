@@ -42,7 +42,7 @@
                   {{/any}}
 
                   <div class="webkite-block-group webkite-prices until-md">
-                    {{~#unless (find ../../facets name="Price Per Glass" empty=true)~}}
+                    {{~#unless (find ../facets name="Price Per Glass" empty=true)~}}
                       <div class="webkite-block webkite-block-fifty webkite-glass">
                         <span class="webkite-price">
                           <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
@@ -51,7 +51,7 @@
                         </span>
                       </div>
                     {{~/unless~}}
-                    {{~#unless (find ../../facets name="Price Per Bottle" empty=true)~}}
+                    {{~#unless (find ../facets name="Price Per Bottle" empty=true)~}}
                       <div class="webkite-block webkite-block-fifty webkite-bottle">
                         <span class="webkite-price">
                           <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
@@ -135,7 +135,7 @@
     
            --><div class="webkite-block webkite-block-thirty webkite-prices-wrap md-only">
                 <div class="webkite-block-group webkite-prices">
-                  {{~#unless (find ../../facets name="Price Per Glass" empty=true)~}}
+                  {{~#unless (find ../facets name="Price Per Glass" empty=true)~}}
                     <div class="webkite-block webkite-block-fifty webkite-glass">
                       <span class="webkite-price">
                         <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
@@ -144,7 +144,7 @@
                       </span>
                     </div>
                   {{~/unless~}}
-                  {{~#unless (find ../../facets name="Price Per Bottle" empty=true)~}}
+                  {{~#unless (find ../facets name="Price Per Bottle" empty=true)~}}
                     <div class="webkite-block webkite-block-fifty webkite-bottle">
                       <span class="webkite-price">
                         <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
