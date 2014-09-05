@@ -677,8 +677,6 @@
   font-style: normal; }
 #webkite-results .webkite-providence {
   color: rgba(255, 255, 255, 0.7); }
-  #webkite-results .webkite-providence span {
-    opacity: 0.75; }
   #webkite-results .webkite-providence:empty {
     display: none; }
   #webkite-results .webkite-providence a + a:before, #webkite-results .webkite-providence span + span:before, #webkite-results .webkite-providence a + span:before, #webkite-results .webkite-providence span + a:before {
@@ -693,7 +691,8 @@
   font-size: 1.3em;
   line-height: 1;
   width: 100%;
-  color: rgba(255, 255, 255, 0.8); }
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold; }
 #webkite-results .webkite-price-value {
   display: inline-block;
   max-width: 100%;
@@ -703,6 +702,7 @@
 #webkite-results .webkite-price-label {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 0.65em;
+  font-weight: normal;
   text-transform: uppercase;
   display: inline-block;
   color: rgba(255, 255, 255, 0.7);

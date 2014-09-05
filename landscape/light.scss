@@ -139,7 +139,6 @@ $imageWidthMd: 100px;
     }
   .webkite-providence {
     color:$lightOpacity;
-    span {opacity:0.5;}
     &:empty {display:none;}
     a + a:before, 
     span + span:before, 
@@ -159,6 +158,7 @@ $imageWidthMd: 100px;
     line-height:1;
     width: 100%;
     color:$medOpacity;
+    font-weight:bold;
     }
   .webkite-price-value {
     display:inline-block;
@@ -170,6 +170,7 @@ $imageWidthMd: 100px;
   .webkite-price-label{
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-size:0.65em;
+    font-weight:normal;
     text-transform: uppercase;
     display:inline-block;
     color: $lightOpacity;
