@@ -844,10 +844,10 @@
     padding: 0;
     line-height: 1.2em; }
   #webkite-results .webkite-modal-content .webkite-subheadline {
-    margin-bottom: 2px;
+    margin-bottom: 0;
     font-family: 'Libre Baskerville', 'Georgia', serif;
     font-style: italic;
-    font-size: 0.9em;
+    font-size: 13px;
     line-height: 1.1;
     color: rgba(255, 255, 255, 0.8);
     text-align: left; }
@@ -864,19 +864,21 @@
   #webkite-results .webkite-modal-content .webkite-price {
     display: inline-block;
     font-family: 'Libre Baskerville', 'Georgia', serif;
-    font-size: 1.3em;
+    font-size: 18px;
     line-height: 1;
     width: 100%;
     color: rgba(255, 255, 255, 0.8); }
   #webkite-results .webkite-modal-content .webkite-price-value {
     display: inline-block;
     max-width: 100%;
+    line-height: 1.2;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
   #webkite-results .webkite-modal-content .webkite-price-label {
     font-family: 'Open Sans', 'Arial', sans-serif;
-    font-size: 0.65em;
+    font-size: 13px;
+    line-height: 1.1;
     text-transform: uppercase;
     display: inline-block;
     color: rgba(255, 255, 255, 0.8);
@@ -980,7 +982,8 @@
     font-size: 1.3em;
     text-align: left; }
   #webkite-results .webkite-modal-content .webkite-result-body .webkite-price-value {
-    vertical-align: bottom; }
+    vertical-align: bottom;
+    line-height: inherit; }
   #webkite-results .webkite-modal-content .webkite-result-body .webkite-price-label {
     font-size: 12px;
     display: inline-block;
@@ -1026,7 +1029,8 @@
       font-size: 1.3em;
       text-align: left; }
     #webkite-results .webkite-modal-content .webkite-result-body .webkite-price-value {
-      vertical-align: bottom; }
+      vertical-align: bottom;
+      line-height: inherit; }
     #webkite-results .webkite-modal-content .webkite-result-body .webkite-price-label {
       font-size: 12px;
       display: inline-block;
@@ -1058,8 +1062,7 @@
     margin-left: 0; }
   #webkite-results .webkite-modal-content .webkite-price-label {
     width: 100%;
-    display: block;
-    margin-bottom: 2px; }
+    display: block; }
   #webkite-results .webkite-modal-content .until-md {
     display: none !important; }
   #webkite-results .webkite-modal-content .md-only {
