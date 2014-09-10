@@ -858,7 +858,8 @@
     line-height: 1.2;
     text-align: left; }
   #webkite-results .webkite-modal-content .webkite-prices {
-    width: 100%; }
+    width: 100%;
+    margin-top: 0; }
     #webkite-results .webkite-modal-content .webkite-prices > .webkite-block {
       text-align: center; }
   #webkite-results .webkite-modal-content .webkite-price {
