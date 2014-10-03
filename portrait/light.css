@@ -91,6 +91,11 @@
 #webkite-results.wine-restaurant-portrait.webkite-light p, #webkite-results.wine-restaurant-portrait.webkite-light li {
   color: rgba(0, 0, 0, 0.7); }
 
+/******************************************** GENERAL */
+#webkite-results.wine-restaurant-portrait.webkite-light {
+  text-align: left;
+  direction: ltr; }
+
 /******************************************** NAVIGATIONALS */
 #webkite-results.wine-restaurant-portrait.webkite-light .webkite-results-header, #webkite-results.wine-restaurant-portrait.webkite-light .webkite-results-footer {
   text-align: justify;
