@@ -148,7 +148,7 @@
                     <div class="webkite-block webkite-block-fifty webkite-glass">
                       <span class="webkite-price">
                         <span class="webkite-price-label">{{t "glass" default="glass"}}</span>
-                        {{~#facet name="Price Per Glass"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                        {{~#facet name="Price Per Glass"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
                         {{~#unless (find facets name="Price Per Glass")~}}-{{~/unless~}}
                       </span>
                     </div>
@@ -157,7 +157,7 @@
                     <div class="webkite-block webkite-block-fifty webkite-bottle">
                       <span class="webkite-price">
                         <span class="webkite-price-label">{{t "bottle" default="bottle"}}</span>
-                        {{~#facet name="Price Per Bottle"~}}<span class="webkite-price-value" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
+                        {{~#facet name="Price Per Bottle"~}}<span class="webkite-price-value webkite-tooltip" title="{{displayValue}}">{{displayValue}}</span>{{~/facet~}}                
                         {{~#unless (find facets name="Price Per Bottle")~}}-{{~/unless~}}
                       </span>
                     </div>
